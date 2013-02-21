@@ -582,6 +582,19 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<visible>!IsEmpty(Weather.Plugin)</visible>
+					</control>		
+					<control type="radiobutton" id="2069">
+						<description>Disable scrolling</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>Disable homescreen carouseling</label>
+						<onclick>Skin.ToggleSetting(homepagecarouseling)</onclick>
+						<selected>Skin.HasSetting(homepagecarouseling)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>					
 					<control type="label" id="2666">
 						<width>750</width>
