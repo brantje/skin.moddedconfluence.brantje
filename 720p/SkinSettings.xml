@@ -821,8 +821,8 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>50024</label>
-						<onclick>Skin.ToggleSetting(FanCode)</onclick>
-						<selected>Skin.HasSetting(FanCode)</selected>
+						<onclick>Skin.ToggleSetting(Weatherbackgroundhome)</onclick>
+						<selected>Skin.HasSetting(Weatherbackgroundhome)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>!IsEmpty(Skin.String(WeatherFanartDir))</enable>
