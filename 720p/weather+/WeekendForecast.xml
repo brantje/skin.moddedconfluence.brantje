@@ -65,7 +65,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>[COLOR=grey2]$LOCALIZE[393][CR][/COLOR]$INFO[Window.Property(Weekend.2.HighTemperature),[B] ,[/B]]$INFO[System.TemperatureUnits]</label>
+						<label>[COLOR=grey2]$LOCALIZE[393][CR][/COLOR]$INFO[Window.Property(Weekend.2.HighTemperature),[B] ,[/B]]</label>
 					</control>
 					<control type="label">
 						<posx>140</posx>
@@ -77,7 +77,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>[COLOR=grey2]$LOCALIZE[391][CR][/COLOR]$INFO[Window.Property(Weekend.2.LowTemperature),[B] ,[/B]]$INFO[System.TemperatureUnits]</label>
+						<label>[COLOR=grey2]$LOCALIZE[391][CR][/COLOR]$INFO[Window.Property(Weekend.2.LowTemperature),[B] ,[/B]]</label>
 					</control>
 					<control type="textbox">
 						<posx>240</posx>
@@ -152,7 +152,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>[COLOR=grey2]$LOCALIZE[393][CR][/COLOR]$INFO[Window.Property(Weekend.3.HighTemperature),[B] ,[/B]]$INFO[System.TemperatureUnits]</label>
+						<label>[COLOR=grey2]$LOCALIZE[393][CR][/COLOR]$INFO[Window.Property(Weekend.3.HighTemperature),[B] ,[/B]]</label>
 					</control>
 					<control type="label">
 						<posx>140</posx>
@@ -164,7 +164,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>[COLOR=grey2]$LOCALIZE[391][CR][/COLOR]$INFO[Window.Property(Weekend.3.LowTemperature),[B] ,[/B]]$INFO[System.TemperatureUnits]</label>
+						<label>[COLOR=grey2]$LOCALIZE[391][CR][/COLOR]$INFO[Window.Property(Weekend.3.LowTemperature),[B] ,[/B]]</label>
 					</control>
 					<control type="textbox">
 						<posx>240</posx>

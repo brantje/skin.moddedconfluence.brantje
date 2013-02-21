@@ -1,4 +1,4 @@
-<window id="2600">
+<window>
 	<defaultcontrol always="true">50</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
@@ -439,7 +439,7 @@
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>[COLOR=grey2]$LOCALIZE[419] : [/COLOR]$INFO[ListItem.Property(HighTemp)]$INFO[ListItem.Property(TempUnits)]     [COLOR=grey2]$LOCALIZE[418] : [/COLOR]$INFO[ListItem.Property(LowTemp)]$INFO[ListItem.Property(TempUnits)]</label>
+							<label>[COLOR=grey2]$LOCALIZE[419] : [/COLOR]$INFO[ListItem.Property(HighTemp)]     [COLOR=grey2]$LOCALIZE[418] : [/COLOR]$INFO[ListItem.Property(LowTemp)]</label>
 							<visible>!IsEmpty(ListItem.Property(HighTemp))</visible>
 						</control>
 						<control type="textbox">
@@ -515,7 +515,7 @@
 							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>[COLOR=grey2]$LOCALIZE[419] : [/COLOR]$INFO[ListItem.Property(HighTemp)]$INFO[ListItem.Property(TempUnits)]     [COLOR=grey2]$LOCALIZE[418] : [/COLOR]$INFO[ListItem.Property(LowTemp)]$INFO[ListItem.Property(TempUnits)]</label>
+							<label>[COLOR=grey2]$LOCALIZE[419] : [/COLOR]$INFO[ListItem.Property(HighTemp)]     [COLOR=grey2]$LOCALIZE[418] : [/COLOR]$INFO[ListItem.Property(LowTemp)]</label>
 							<visible>!IsEmpty(ListItem.Property(HighTemp))</visible>
 						</control>
 						<control type="textbox">
@@ -532,7 +532,7 @@
 						</control>
 					</focusedlayout>
 					<content>
-						<item>
+					<!--	<item>
 							<label>$LOCALIZE[31909]</label>
 							<icon>-</icon>
 							<onclick>-</onclick>
@@ -637,7 +637,7 @@
 							<property name="TempUnits">$INFO[System.TemperatureUnits]</property>
 							<onclick>-</onclick>
 							<visible>Weather.IsFetched + !IsEmpty(Window.Property(Day9.Title))</visible>
-						</item>
+						</item> -->
 					</content>
 				</control>
 				<control type="scrollbar" id="61">
@@ -658,7 +658,7 @@
 				</control>
 			</control>
 			<control type="group">
-				<visible>StringCompare(Weather.Plugin,weather.weatherplus)</visible>
+				<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
 				<posx>580</posx>
 				<posy>40</posy>
 				<control type="image">
@@ -684,11 +684,11 @@
 					<texture>GlassTitleBar.png</texture>
 				</control>
 				<control type="group" id="50">
-					<include condition="StringCompare(Weather.Plugin,weather.weatherplus)">Weather+10DayForcast</include>
-					<include condition="StringCompare(Weather.Plugin,weather.weatherplus)">Weather+36HourForcast</include>
-					<include condition="StringCompare(Weather.Plugin,weather.weatherplus)">Weather+WeekendForcast</include>
-					<include condition="StringCompare(Weather.Plugin,weather.weatherplus)">Weather+HourlyForcast</include>
-					<include condition="StringCompare(Weather.Plugin,weather.weatherplus)">Weather+MapsVideo</include>
+					<include condition="StringCompare(Weather.Plugin,weather.wunderground)">Weather+10DayForcast</include>
+					<include condition="StringCompare(Weather.Plugin,weather.wunderground)">Weather+36HourForcast</include>
+					<include condition="StringCompare(Weather.Plugin,weather.wunderground)">Weather+WeekendForcast</include>
+					<include condition="StringCompare(Weather.Plugin,weather.wunderground)">Weather+HourlyForcast</include>
+					<include condition="StringCompare(Weather.Plugin,weather.wunderground)">Weather+MapsVideo</include>
 				</control>
 			</control>
 		</control>
@@ -749,7 +749,7 @@
 					<include>ButtonCommonValues</include>
 					<label>31904</label>
 					<onclick>ClearProperty(Weather.CurrentView)</onclick>
-					<visible>StringCompare(Weather.Plugin,weather.weatherplus)</visible>
+					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
 				</control>
 				<control type="button" id="303">
 					<description>36 hour forcast button</description>
@@ -757,7 +757,7 @@
 					<include>ButtonCommonValues</include>
 					<label>31901</label>
 					<onclick>SetProperty(Weather.CurrentView,36hour)</onclick>
-					<visible>StringCompare(Weather.Plugin,weather.weatherplus)</visible>
+					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
 				</control>
 				<control type="button" id="304">
 					<description>Weekend forcast button</description>
@@ -765,7 +765,7 @@
 					<include>ButtonCommonValues</include>
 					<label>31903</label>
 					<onclick>SetProperty(Weather.CurrentView,weekend)</onclick>
-					<visible>StringCompare(Weather.Plugin,weather.weatherplus)</visible>
+					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
 				</control>
 				<control type="button" id="305">
 					<description>Hourly forcast button</description>
@@ -773,7 +773,7 @@
 					<include>ButtonCommonValues</include>
 					<label>31902</label>
 					<onclick>SetProperty(Weather.CurrentView,hourly)</onclick>
-					<visible>StringCompare(Weather.Plugin,weather.weatherplus)</visible>
+					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
 				</control>
 				<control type="button" id="306">
 					<description>Hourly forcast button</description>
@@ -781,7 +781,7 @@
 					<include>ButtonCommonValues</include>
 					<label>31906</label>
 					<onclick>SetProperty(Weather.CurrentView,maps)</onclick>
-					<visible>StringCompare(Weather.Plugin,weather.weatherplus)</visible>
+					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
 				</control>
 				<control type="label" id="201">
 					<width>250</width>
