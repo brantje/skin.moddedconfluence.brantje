@@ -17,15 +17,16 @@
 			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
 			<visible>!Skin.HasSetting(NoFloor)</visible>
 		</control>
-					<control type="label">
+			<control type="label">
 					<description>IP Label</description>
 					<posx>308</posx>
 					<posy>18</posy>
 					<info>network.ipaddress</info>
 					<align>left</align>
+					<align>left</align>
 					<font>font12</font>
-				    <animation effect="fade" time="50" condition="Window.Previous(Home)">WindowOpen</animation>
-			        <animation effect="fade" time="50" condition="Window.Next(Home)">WindowClose</animation>
+					<include>VisibleFadeEffect</include>
+					<include>Window_OpenClose_Animation</include>
 					<visible>Skin.HasSetting(homepageSysteminfo) + !Skin.HasSetting(NoLogo) + system.hasnetwork</visible>
 		    </control>
 			<control type="image" id="999">
