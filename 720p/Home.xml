@@ -26,7 +26,7 @@
 					<font>font12</font>
 				    <animation effect="fade" time="50" condition="Window.Previous(Home)">WindowOpen</animation>
 			        <animation effect="fade" time="50" condition="Window.Next(Home)">WindowClose</animation>
-					<visible>system.hasnetwork</visible>
+					<visible>Skin.HasSetting(homepageSysteminfo) + !Skin.HasSetting(NoLogo) + system.hasnetwork</visible>
 		    </control>
 			<control type="image" id="999">
 					<description>networklogo</description>
@@ -38,9 +38,9 @@
 					<fadetime>200</fadetime>
 					<texture>network.png</texture>
 					<aspectratio>keep</aspectratio>
-				<include>VisibleFadeEffect</include>
-				<include>Window_OpenClose_Animation</include>
-				<visible>Skin.HasSetting(homepageSysteminfo) + !Skin.HasSetting(NoLogo)</visible>
+					<include>VisibleFadeEffect</include>
+					<include>Window_OpenClose_Animation</include>
+				<visible>Skin.HasSetting(homepageSysteminfo) + !Skin.HasSetting(NoLogo) + system.hasnetwork</visible>
 			</control>
 			<control type="image" id="666">
 					<description>cpu logo</description>
