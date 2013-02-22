@@ -3,7 +3,7 @@
   id="skin.moddedconfluence.brantje"
   version="0.3"
   name="Confluence-MOD Vol.2 Brantje Edition"
-  provider-name="mad-max. Edited by brantje">
+  provider-name="brantje">
   <requires>
     <import addon="xbmc.gui" version="4.0.0"/>
   </requires>
@@ -16,7 +16,7 @@
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Confluence-MOD Vol.II Brantje Edition by mad-max</summary>
-    <description lang="en">Based on the Confluence ModII From mad-max. Edited: Added homeshortcuts back, added an option for Xbian config.</description>
+    <description lang="en">Based on the Confluence ModII From mad-max. Edited: Added homeshortcuts back, added an option for Xbian config, system info, weather background.</description>
 	<disclaimer lang="en">Confluence is based on the work of Jezz_X and Team XBMC</disclaimer>
     <platform>all</platform>
   </extension>
