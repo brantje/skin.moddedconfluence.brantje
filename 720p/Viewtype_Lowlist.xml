@@ -80,6 +80,22 @@
 						<width>20</width>
 						<height>16</height>
 						<texture>$INFO[ListItem.Overlay]</texture>
+						<visible>!ListItem.IsResumable</visible>
+					</control>
+					<control type="image">
+						<posx>445</posx>
+						<posy>14</posy>
+						<width>16</width>
+						<height>16</height>
+						<texture>OverlayWatching.png</texture>
+						<visible>ListItem.IsResumable</visible>
+					</control>
+					<control type="image">
+						<posx>445</posx>
+						<posy>14</posy>
+						<width>20</width>
+						<height>16</height>
+						<texture>$INFO[ListItem.Overlay]</texture>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="480">
@@ -132,6 +148,22 @@
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label2]</label>
+					</control>
+					<control type="image">
+						<posx>445</posx>
+						<posy>14</posy>
+						<width>20</width>
+						<height>16</height>
+						<texture>$INFO[ListItem.Overlay]</texture>
+						<visible>!ListItem.IsResumable</visible>
+					</control>
+					<control type="image">
+						<posx>445</posx>
+						<posy>14</posy>
+						<width>16</width>
+						<height>16</height>
+						<texture>OverlayWatching.png</texture>
+						<visible>ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
 						<posx>445</posx>
@@ -251,7 +283,7 @@
 					<font>font12</font>
 					<align>justify</align>
 					<textcolor>white</textcolor>
-					<label>[COLOR blue]$LOCALIZE[40027]: [/COLOR]$INFO[ListItem.Plot]</label>
+					<label>$INFO[ListItem.Plot]</label>
 					<autoscroll time="3000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>Container.Content(TVShows)</visible>
 				</control>
@@ -384,7 +416,7 @@
 					<font>font12</font>
 					<align>justify</align>
 					<textcolor>white</textcolor>
-					<label>[COLOR blue]$LOCALIZE[40027]: [/COLOR]$INFO[ListItem.Plot]</label>
+					<label>$INFO[ListItem.Plot]</label>
 					<autoscroll time="3000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 			</control>
@@ -527,7 +559,7 @@
 					<font>font12</font>
 					<align>justify</align>
 					<textcolor>white</textcolor>
-					<label>[COLOR blue]$LOCALIZE[40027]: [/COLOR]$INFO[ListItem.Plot]</label>
+					<label>$INFO[ListItem.Plot]</label>
 					<autoscroll time="3000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>
 			</control>
@@ -567,7 +599,7 @@
 					<font>font12</font>
 					<align>justify</align>
 					<textcolor>white</textcolor>
-					<label>[COLOR blue]$LOCALIZE[40027]: [/COLOR]$INFO[ListItem.Plot]</label>
+					<label>$INFO[ListItem.Plot]</label>
 					<autoscroll time="3000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>Container.Content(Episodes)</visible>
 				</control>
