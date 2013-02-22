@@ -88,9 +88,9 @@
 		</control>
 		<control type="button" id="90163">
 			<include>ButtonHomeSubCommonValues</include>
-			<label>20434</label>
-			<onclick>ActivateWindow(Videos,MovieSets,return)</onclick>
-			<visible>Library.HasContent(MovieSets)</visible>
+			<label>369</label>
+			<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
+			<visible>Library.HasContent(Movies)</visible>
 		</control>
 		<control type="button" id="90164">
 			<include>ButtonHomeSubCommonValues</include>
