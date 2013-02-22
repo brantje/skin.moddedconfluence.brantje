@@ -31,7 +31,7 @@
 		    </control>
 			<control type="image" id="999">
 					<description>networklogo</description>
-					<posx>266</posx>
+					<posx>270</posx>
 					<posy>12</posy>
 					<width>32</width>
 					<height>32</height>
@@ -45,7 +45,7 @@
 			</control>
 			<control type="image" id="666">
 					<description>cpu logo</description>
-					<posx>423</posx>
+					<posx>428</posx>
 					<posy>12</posy>
 					<width>32</width>
 					<height>32</height>
@@ -59,7 +59,7 @@
 			</control>
 			<control type="image" id="656">
 					<description>free memory logo</description>
-					<posx>528</posx>
+					<posx>544</posx>
 					<posy>12</posy>
 					<width>32</width>
 					<height>32</height>
