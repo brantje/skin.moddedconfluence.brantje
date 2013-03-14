@@ -514,7 +514,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideDebugOverlay)</onclick>
-						<selected>!Skin.HasSetting(HideDebugOverlay)</selected>
+						<selected>Skin.HasSetting(HideDebugOverlay)</selected>
 					</control>
 				</control>
 				<control type="scrollbar" id="60">

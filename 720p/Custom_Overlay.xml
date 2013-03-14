@@ -26,7 +26,7 @@
 			<width>780</width>
 			<height>450</height>
 			<itemgap>12</itemgap>
-			<visible>!Skin.HasSetting(HideDebugOverlay)</visible>
+			<visible>Skin.HasSetting(HideDebugOverlay)</visible>
 
 			<!-- Window labels -->
 
@@ -926,7 +926,7 @@
 			<font>font13</font>
 			<align>right</align>
 			<label>$INFO[System.CurrentControl]</label>
-			<visible>!Skin.HasSetting(HideDebugOverlay)</visible>
+			<visible>Skin.HasSetting(HideDebugOverlay)</visible>
 		</control>
 
 		<!-- Path label -->
@@ -941,7 +941,7 @@
 			<font>font13</font>
 			<align>right</align>
 			<label>[COLOR=FF00FF00]$INFO[Container.FolderName,, - ][/COLOR]$INFO[Container.FolderPath]</label>
-			<visible>!Skin.HasSetting(HideDebugOverlay)</visible>
+			<visible>Skin.HasSetting(HideDebugOverlay)</visible>
 		</control>
 
 	</controls>
