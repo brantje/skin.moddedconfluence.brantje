@@ -9,13 +9,13 @@
 			<include>ButtonHomeSubCommonValues</include>
 			<label>342</label>
 			<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
-			<visible>Library.HasContent(Movies) + Skin.HasSetting(HomeMenuNoMoviesButton)</visible>
+			<visible>Library.HasContent(Movies)</visible>
 		</control>
 		<control type="button" id="90103">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>20343</label>
 			<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
-			<visible>Library.HasContent(TVShows) + Skin.HasSetting(HomeMenuNoTVShowsButton)</visible>
+			<visible>Library.HasContent(TVShows)</visible>
 		</control>
 		<control type="button" id="90104">
 			<include>ButtonHomeSubCommonValues</include>
@@ -85,28 +85,31 @@
 			<include>ButtonHomeSubCommonValues</include>
 			<label>31328</label>
 			<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
+			<visible>Library.HasContent(Movies) + !Skin.HasSetting(HomeMenuNoMoviesRecentButton)</visible>
 		</control>
 		<control type="button" id="90163">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>369</label>
 			<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
-			<visible>Library.HasContent(Movies)</visible>
+			<visible>Library.HasContent(Movies) + !Skin.HasSetting(HomeMenuNoMoviesTitleButton)</visible>
 		</control>
 		<control type="button" id="90164">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>744</label>
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
+			<visible>!Skin.HasSetting(HomeMenuNoMoviesFilesButton)</visible>
 		</control>	
 		<control type="button" id="90165">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>20434</label>
 			<onclick>ActivateWindow(Videos,MovieSets,return)</onclick>
-			<visible>Library.HasContent(MovieSets)</visible>
+			<visible>Library.HasContent(MovieSets) + !Skin.HasSetting(HomeMenuNoMoviesSetsButton) </visible>
 		</control>		
 		<control type="button" id="90166">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>135</label>
 			<onclick>ActivateWindow(Videos,MovieGenres,return)</onclick>
+			<visible>Library.HasContent(Movies) + !Skin.HasSetting(HomeMenuNoMoviesGenresButton) </visible>
 		</control>
 		<control type="image" id="90168">
 			<width>35</width>
@@ -124,11 +127,19 @@
 			<include>ButtonHomeSubCommonValues</include>
 			<label>31328</label>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
+			<visible>!Skin.HasSetting(HomeMenuNoTVShowsRecentButton)</visible>
+		</control>	
+		<control type="button" id="90173">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>31913</label>
+			<onclick>ActivateWindow(Videos,TvShows,return)</onclick>
+			<visible>!Skin.HasSetting(HomeMenuNoTVShowsAllButton)</visible>
 		</control>
 		<control type="button" id="90174">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>135</label>
 			<onclick>ActivateWindow(Videos,TVShowGenres,return)</onclick>
+			<visible>!Skin.HasSetting(HomeMenuNoTVShowsGenresButton)</visible>
 		</control>
 		<control type="image" id="90177">
 			<width>35</width>
@@ -146,24 +157,25 @@
 			<include>ButtonHomeSubCommonValues</include>
 			<label>744</label>
 			<onclick>ActivateWindow(MusicFiles)</onclick>
+			<visible>!Skin.HasSetting(HomeMenuNoMusicFileButton)</visible>
 		</control>
 		<control type="button" id="90116">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>14022</label>
 			<onclick>ActivateWindow(MusicLibrary,root)</onclick>
-			<visible>Library.HasContent(Music)</visible>
+			<visible>Library.HasContent(Music) + !Skin.HasSetting(HomeMenuNoMusicLibraryButton)</visible>
 		</control>
 		<control type="button" id="90117">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>24001</label>
 			<onclick>ActivateWindow(MusicLibrary,Addons,return)</onclick>
-			<visible>Library.HasContent(Music)</visible>
+			<visible>Library.HasContent(Music) + !Skin.HasSetting(HomeMenuNoMusicAddonsButton)</visible>
 		</control>
 		<control type="button" id="90118">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>24001</label>
 			<onclick>ActivateWindow(MusicFiles,Addons,return)</onclick>
-			<visible>!Library.HasContent(Music)</visible>
+			<visible>!Library.HasContent(Music) + !Skin.HasSetting(HomeMenuNoMusicAddonsButton)</visible>
 		</control>
 		<control type="button" id="90119">
 			<include>ButtonHomeSubCommonValues</include>
