@@ -1,3 +1,7 @@
-[B]0.5[/B]
+0.4 - Added an option to disable individual submenu buttons
 
-- Initial Commit to GIT and first release
+0.3 - First release:
+	  - Added homeshortcuts back
+	  - added an option for Xbian config
+	  - System info on top
+	  - Weather background
