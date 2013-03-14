@@ -183,12 +183,12 @@
 			<onclick>ActivateWindow(MusicFiles,lastfm://)</onclick>
 			<visible>Skin.HasSetting(lastfm)</visible>
 		</control>
-		<control type="button" id="90120">
+<!-- Lastfm support is dropped		<control type="button" id="90120">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Last.FM Radio</label>
 			<onclick>PlayMedia(lastfm://globaltags/$INFO[Skin.String(lastfmtag_Label)])</onclick>
 			<visible>Skin.HasSetting(lastfmtag)</visible>
-		</control>		
+		</control>	-->	
 		<control type="image" id="90121">
 			<width>35</width>
 			<height>35</height>
