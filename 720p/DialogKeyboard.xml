@@ -464,7 +464,7 @@
 					<onleft>79</onleft>
 					<onright>302</onright>
 					<onup>57</onup>
-					<ondown>84</ondown>
+					<ondown>76</ondown>
 					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
 					<texturefocus border="5">KeyboardKey.png</texturefocus>
 					<align>center</align>
@@ -621,7 +621,7 @@
 					<onleft>75</onleft>
 					<onright>303</onright>
 					<onup>73</onup>
-					<ondown>306</ondown>
+					<ondown>8</ondown>
 					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
 					<texturefocus border="5">KeyboardKey.png</texturefocus>
 					<align>center</align>
@@ -810,7 +810,7 @@
 					<width>150</width>
 					<height>50</height>
 					<label>20181</label>
-					<onleft>90</onleft>
+					<onleft>77</onleft>
 					<onright>304</onright>
 					<onup>81</onup>
 					<ondown>305</ondown>
@@ -854,7 +854,7 @@
 					<focusedcolor>black</focusedcolor>
 					<onleft>307</onleft>
 					<onright>305</onright>
-					<onup>85</onup>
+					<onup>66</onup>
 					<ondown>48</ondown>
 				</control>
 				<control type="button" id="305">
