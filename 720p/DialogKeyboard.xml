@@ -1,71 +1,46 @@
-<window>
-	<defaultcontrol always="true">9000</defaultcontrol>
+<window id="103">
+	<defaultcontrol always="true">300</defaultcontrol>
+	<include>dialogeffect</include>
+	<coordinates>
+		<system>2</system>
+		<posx>255</posx>
+		<posy>145</posy>
+	</coordinates>
 	<controls>
-		<include>CommonBackground</include>
-		<control type="image">
-			<posx>0</posx>
-			<posy>100r</posy>
-			<width>1280</width>
-			<height>100</height>
-			<texture>floor.png</texture>
-			<include>VisibleFadeEffect</include>
-		</control>
-		<control type="image">
-			<description>Section header image</description>
-			<posx>20</posx>
-			<posy>3</posy>
-			<width>35</width>
-			<height>35</height>
-			<aspectratio>keep</aspectratio>
-			<texture>icon_system.png</texture>
-		</control>
-		<control type="grouplist">
-			<posx>65</posx>
-			<posy>5</posy>
-			<width>1000</width>
-			<height>30</height>
-			<orientation>horizontal</orientation>
-			<align>left</align>
-			<itemgap>5</itemgap>
-			<control type="label">
-				<include>WindowTitleCommons</include>
-				<label>$LOCALIZE[20077]</label>
-			</control>
-			<control type="label">
-				<include>WindowTitleCommons</include>
-				<label>[COLOR=blue] - [/COLOR]$INFO[Container.FolderName]</label>
-				<visible>!IsEmpty(Container.FolderName)</visible>
-			</control>
-		</control>
 		<control type="group">
-			<posx>90</posx>
-			<posy>30</posy>
-			<animation type="WindowOpen" reversible="false">
-				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
-				<effect type="fade" start="0" end="100" time="300" />
-			</animation>
-			<animation type="WindowClose" reversible="false">
-				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
-				<effect type="fade" start="100" end="0" time="300" />
-			</animation>
+			<include>VisibleFadeEffect</include>
+			<visible>!Window.IsVisible(numericinput)</visible>
 			<control type="image">
-				<posx>5</posx>
-				<posy>5</posy>
-				<width>1090</width>
-				<height>630</height>
-				<texture border="15">ContentPanel.png</texture>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>760</width>
+				<height>430</height>
+				<texture border="40">DialogBack.png</texture>
 			</control>
 			<control type="image">
-				<posx>5</posx>
-				<posy>625</posy>
-				<width>1090</width>
-				<height>64</height>
-				<texture border="15">ContentPanelMirror.png</texture>
+				<description>Dialog Header image</description>
+				<posx>40</posx>
+				<posy>16</posy>
+				<width>680</width>
+				<height>40</height>
+				<texture>dialogheader.png</texture>
+			</control>
+			<control type="label" id="311">
+				<description>header label</description>
+				<posx>40</posx>
+				<posy>20</posy>
+				<width>720</width>
+				<height>30</height>
+				<font>font13_title</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>selected</textcolor>
+				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="button">
 				<description>Close Window button</description>
-				<posx>980</posx>
-				<posy>11</posy>
+				<posx>670</posx>
+				<posy>15</posy>
 				<width>64</width>
 				<height>32</height>
 				<label>-</label>
@@ -73,2081 +48,825 @@
 				<onclick>PreviousMenu</onclick>
 				<texturefocus>DialogCloseButton-focus.png</texturefocus>
 				<texturenofocus>DialogCloseButton.png</texturenofocus>
-				<onleft>1</onleft>
-				<onright>1</onright>
-				<onup>1</onup>
-				<ondown>1</ondown>
+				<onleft>3</onleft>
+				<onright>3</onright>
+				<onup>3</onup>
+				<ondown>3</ondown>
 				<visible>system.getbool(input.enablemouse)</visible>
 			</control>
 			<control type="image">
-				<description>LOGO</description>
-				<posx>30</posx>
-				<posy>15</posy>
-				<width>220</width>
-				<height>80</height>
-				<aspectratio>keep</aspectratio>
-				<texture>Confluence_Logo.png</texture>
-			</control>
-			<control type="list" id="9000">
-				<posx>10</posx>
-				<posy>90</posy>
-				<width>260</width>
-				<height>481</height>
-				<onleft>9010</onleft>
-				<onright>9010</onright>
-				<onup>9000</onup>
-				<ondown>9000</ondown>
-				<pagecontrol>-</pagecontrol>
-				<scrolltime>300</scrolltime>
-				<itemlayout height="80" width="260">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>260</width>
-						<height>81</height>
-						<texture border="5">MenuItemNF.png</texture>
-					</control>
-					<control type="label">
-						<posx>250</posx>
-						<posy>15</posy>
-						<width>380</width>
-						<height>25</height>
-						<font>font24_title</font>
-						<textcolor>grey3</textcolor>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-					<control type="label">
-						<posx>250</posx>
-						<posy>42</posy>
-						<width>870</width>
-						<height>25</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
-					</control>
-				</itemlayout>
-				<focusedlayout height="80" width="260">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>260</width>
-						<height>81</height>
-						<texture border="5">MenuItemFO.png</texture>
-						<animation effect="fade" start="100" end="30" time="100" condition="!Control.HasFocus(9000)">Conditional</animation>
-					</control>
-					<control type="label">
-						<posx>250</posx>
-						<posy>15</posy>
-						<width>380</width>
-						<height>25</height>
-						<font>font24_title</font>
-						<textcolor>white</textcolor>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-					<control type="label">
-						<posx>250</posx>
-						<posy>42</posy>
-						<width>870</width>
-						<height>25</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
-					</control>
-				</focusedlayout>
-				<content>
-					<item id="1">
-						<label>128</label>
-						<label2>5</label2>
-						<onclick>-</onclick>
-					</item>
-					<item id="2">
-						<label>513</label>
-						<label2>31112</label2>
-						<onclick>-</onclick>
-					</item>
-					<item id="3">
-						<label>31102</label>
-						<label2>31112</label2>
-						<onclick>-</onclick>
-					</item>
-					<item id="4">
-						<label>24000</label>
-						<label2>31200</label2>
-						<onclick>-</onclick>
-					</item>
-					<item id="5">
-						<label>513</label>
-						<label2>50002</label2>
-						<onclick>-</onclick>
-						<visible>Skin.HasSetting(SeparateBackdrops)</visible>
-					</item>					
-				</content>
-			</control>
-			<control type="image">
-				<posx>268</posx>
-				<posy>10</posy>
-				<width>790</width>
-				<height>618</height>
-				<texture border="5">black-back2.png</texture>
-			</control>
-			<control type="image">
-				<posx>268</posx>
-				<posy>10</posy>
-				<width>804</width>
-				<height>100</height>
+				<posx>50</posx>
+				<posy>60</posy>
+				<width>660</width>
+				<height>50</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>GlassTitleBar.png</texture>
+				<texture border="20">KeyboardEditArea.png</texture>
 			</control>
-			<control type="label">
-				<description>header label</description>
-				<posx>300</posx>
-				<posy>20</posy>
-				<width>740</width>
-				<height>30</height>
-				<font>font16</font>
-				<label>$LOCALIZE[20077] - $INFO[Container(9000).ListItem.Label]</label>
-				<align>left</align>
+			<control type="label" id="310">
+				<description>Edit Text</description>
+				<posx>55</posx>
+				<posy>60</posy>
+				<width>650</width>
+				<height>50</height>
+				<font>font13</font>
+				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
 			</control>
-			<control type="group" id="9010">
-				<control type="grouplist" id="9001">
-					<visible>Container(9000).Hasfocus(1)</visible>
-					<posx>290</posx>
-					<posy>60</posy>
-					<width>750</width>
-					<height>530</height>
-					<itemgap>-1</itemgap>
-					<pagecontrol>60</pagecontrol>
-					<onleft>9000</onleft>
-					<onright>60</onright>
-					<onup>9001</onup>
-					<ondown>9001</ondown>
-					<control type="label" id="1666">
-						<width>750</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>20342</label>
-						<textcolor>blue</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>
-					<control type="radiobutton" id="314">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>50028</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(ShowTrailer)</onclick>
-						<selected>Skin.HasSetting(ShowTrailer)</selected>
-					</control>
-					<control type="radiobutton" id="1006">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>50008</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(ExtraFanart)</onclick>
-						<selected>Skin.HasSetting(ExtraFanart)</selected>
-					</control>	
-					<control type="label" id="104">
-						<width>750</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>20343</label>
-						<textcolor>blue</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>
-					<control type="radiobutton" id="115">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31126</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(ActivateTvTunes)</onclick>
-						<selected>Skin.HasSetting(ActivateTvTunes)</selected>
-					</control>
-					<control type="radiobutton" id="1007">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>50009</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(SeasonFanart)</onclick>
-						<selected>Skin.HasSetting(SeasonFanart)</selected>
-					</control>						
-					<control type="radiobutton" id="1005">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>50007</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(ClearArt)</onclick>
-						<selected>Skin.HasSetting(ClearArt)</selected>
-					</control>	
-					<control type="label" id="10454">
-						<width>750</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>$LOCALIZE[2]</label>
-						<textcolor>blue</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>	
-					<control type="radiobutton" id="1001">
-						<description>enable CDArt in Visualization</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>50003</label>
-						<onclick>Skin.ToggleSetting(CdArtVis)</onclick>
-						<selected>Skin.HasSetting(CdArtVis)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="button" id="1004">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>50006</label>
-						<label2>$INFO[Skin.Path(Music_Folder_Path)]</label2>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<onclick>Skin.SetPath(Music_Folder_Path)</onclick>
-					</control>
-					<control type="radiobutton" id="1008">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>50010</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(ArtistSlide)</onclick>
-						<selected>Skin.HasSetting(ArtistSlide)</selected>
-					</control>
-					<control type="radiobutton" id="1147">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>50043</label>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>menuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(CDWallNoVisualisation)</onclick>
-						<selected>Skin.HasSetting(CDWallNoVisualisation)</selected>
-					</control>
-					<control type="button" id="1148">
-						<description>CD Wall Picture Path</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>menuItemNF.png</texturenofocus>
-						<label>50044</label>
-						<label2>$INFO[Skin.String(CDWall_Folder_Path)]</label2>
-						<onclick>Skin.SetPath(CDWall_Folder_Path)</onclick>
-						<visible>Skin.HasSetting(CDWallNoVisualisation)</visible>
-					</control>					
-					<control type="label" id="106">
-						<width>750</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>512</label>
-						<textcolor>blue</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>
-					<control type="radiobutton" id="107">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>21398</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
-						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
-					</control>
-					<control type="button" id="108">
-						<description>Startup Playlist Path</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>15311</label>
-						<label2>$INFO[Skin.String(Startup_Playlist_Path)]</label2>
-						<onclick>Skin.SetFile(Startup_Playlist_Path,,special://MusicPlaylists/)</onclick>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
-					</control>					
-					<control type="label" id="100">
-						<width>750</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>31106</label>
-						<textcolor>blue</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>
-					<control type="radiobutton" id="101">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>20189</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
-						<selected>Skin.HasSetting(AutoScroll)</selected>
-					</control>
-					<control type="radiobutton" id="1003">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>50005</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(IntroMovie)</onclick>
-						<selected>Skin.HasSetting(IntroMovie)</selected>
-					</control>
-					<control type="radiobutton" id="1002">
-						<description>enable kiosk mode</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>50004</label>
-						<onclick>Skin.ToggleSetting(KioskMode)</onclick>
-						<selected>Skin.HasSetting(KioskMode)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>	
-					<control type="radiobutton" id="102">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31103</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(Show_SlideShow_Paused)</onclick>
-						<selected>!Skin.HasSetting(Show_SlideShow_Paused)</selected>
-					</control>
-					<control type="radiobutton" id="112">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31104</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
-						<selected>Skin.HasSetting(WindowedTrailer)</selected>
-					</control>
-					<control type="radiobutton" id="113">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31107</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(HideFilenameFlagging)</onclick>
-						<selected>Skin.HasSetting(HideFilenameFlagging)</selected>
-					</control>
+			<control type="image">
+				<posx>130</posx>
+				<posy>110</posy>
+				<width>500</width>
+				<height>30</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>DialogHeader.png</texture>
+			</control>
+			<control type="group">
+				<posx>30</posx>
+				<posy>140</posy>
+				<control type="button" id="300">
+					<description>DONE button</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>200</width>
+					<height>50</height>
+					<label>20177</label>
+					<onleft>57</onleft>
+					<onright>48</onright>
+					<onup>307</onup>
+					<ondown>302</ondown>
+					<texturenofocus border="25,25,5,5">KeyboardCornerTopNF.png</texturenofocus>
+					<texturefocus border="25,25,5,5">KeyboardCornerTop.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
 				</control>
-				<control type="scrollbar" id="60">
-					<posx>1060</posx>
-					<posy>60</posy>
-					<width>25</width>
-					<height>530</height>
-					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-					<textureslidernib>ScrollBarNib.png</textureslidernib>
-					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
-					<onleft>9001</onleft>
-					<onright>9000</onright>
-					<showonepage>false</showonepage>
-					<orientation>vertical</orientation>
-					<visible>Container(9000).Hasfocus(1)</visible>
+				<control type="button" id="48">
+					<description>'0' button</description>
+					<posx>200</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>300</onleft>
+					<onright>49</onright>
+					<onup>32</onup>
+					<ondown>65</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
 				</control>
-				<control type="grouplist" id="9002">
-					<visible>Container(9000).Hasfocus(2)</visible>
-					<posx>290</posx>
-					<posy>60</posy>
-					<width>750</width>
-					<height>530</height>
-					<itemgap>-1</itemgap>
-					<pagecontrol>60</pagecontrol>
-					<onleft>9000</onleft>
-					<onright>60</onright>
-					<onup>9002</onup>
-					<ondown>9002</ondown>
-					<control type="label" id="200">
-						<width>750</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>31101</label>
-						<textcolor>blue</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>
-					<control type="radiobutton" id="202">
-						<description>enable video info</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>20176</label>
-						<onclick>Skin.ToggleSetting(homepageVideoinfo)</onclick>
-						<selected>!Skin.HasSetting(homepageVideoinfo)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="203">
-						<description>enable music info</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>20083</label>
-						<onclick>Skin.ToggleSetting(homepageMusicinfo)</onclick>
-						<selected>!Skin.HasSetting(homepageMusicinfo)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="204">
-						<description>enable weather info</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>20084</label>
-						<onclick>Skin.ToggleSetting(homepageWeatherinfo)</onclick>
-						<selected>Skin.HasSetting(homepageWeatherinfo)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<visible>!IsEmpty(Weather.Plugin)</visible>
-					</control>					
-					<control type="label" id="2666">
-						<width>750</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>50040</label>
-						<textcolor>blue</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>
-					<control type="radiobutton" id="2005">
-						<description>disable arrows for recently added</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>50015</label>
-						<onclick>Skin.ToggleSetting(NoArrow)</onclick>
-						<selected>Skin.HasSetting(NoArrow)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>	
-					<control type="radiobutton" id="205">
-						<description>Show Recently added Video info</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>31117</label>
-						<onclick>Skin.ToggleSetting(HomepageHideRecentlyAddedVideo)</onclick>
-						<selected>!Skin.HasSetting(HomepageHideRecentlyAddedVideo)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="206">
-						<description>Show Recently added info</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>31116</label>
-						<onclick>Skin.ToggleSetting(HomepageHideRecentlyAddedAlbums)</onclick>
-						<selected>!Skin.HasSetting(HomepageHideRecentlyAddedAlbums)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>		
-					<control type="label" id="2466">
-						<width>750</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>50041</label>
-						<textcolor>blue</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>
-					<control type="radiobutton" id="2001">
-						<description>Disable XBMC logo in Home</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>50011</label>
-						<onclick>Skin.ToggleSetting(NoLogo)</onclick>
-						<selected>Skin.HasSetting(NoLogo)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="2002">
-						<description>disable floor.png in Home</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>50012</label>
-						<onclick>Skin.ToggleSetting(NoFloor)</onclick>
-						<selected>Skin.HasSetting(NoFloor)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="2003">
-						<description>lower menu bar</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>50013</label>
-						<onclick>Skin.ToggleSetting(LowerMenu)</onclick>
-						<selected>Skin.HasSetting(LowerMenu)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="2004">
-						<description>enable CDArt in Home</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>50014</label>
-						<onclick>Skin.ToggleSetting(CdArtHome)</onclick>
-						<selected>Skin.HasSetting(CdArtHome)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="2006">
-						<description>disable arrows for recently added</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>50016</label>
-						<onclick>Skin.ToggleSetting(FanartInHome)</onclick>
-						<selected>Skin.HasSetting(FanartInHome)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>						
-					<control type="radiobutton" id="2007">
-						<description>Default focus</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>50018</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<label>default focus</label>
-						<onclick>Skin.ToggleSetting(customstartupfocus)</onclick>
-						<selected>Skin.HasSetting(customstartupfocus)</selected>
-					</control>
-					<control type="button" id="2008">
-						<description>Default focus</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font12</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>			
-						<label>50019</label>
-						<label2>[COLOR=selected]$INFO[Skin.String(CustomFocusOffset)][/COLOR]</label2>
-						<onclick>Skin.SetNumeric(CustomFocusOffset)</onclick>
-						<visible>Skin.HasSetting(customstartupfocus)</visible>
-					</control>
-					<control type="radiobutton" id="2009">
-						<description>Default focus</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>50020</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(WeatherWidget)</onclick>
-						<selected>Skin.HasSetting(WeatherWidget)</selected>
-					</control>
-					<control type="radiobutton" id="2010">
-						<description>Default focus</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>50021</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(ActivateSearch)</onclick>
-						<selected>Skin.HasSetting(ActivateSearch)</selected>
-					</control>
-					<control type="radiobutton" id="2011">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>50022</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(DatabaseStats)</onclick>
-						<selected>Skin.HasSetting(DatabaseStats)</selected>
-						<enable>!Skin.HasSetting(ActivateSearch)</enable>
-					</control>	
-					<control type="radiobutton" id="2012">
-						<description>disable auto slideout of submenus</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>50023</label>
-						<onclick>Skin.ToggleSetting(NoSlide)</onclick>
-						<selected>Skin.HasSetting(NoSlide)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="2013">
-						<description>disable auto slideout of submenus</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>50024</label>
-						<onclick>Skin.ToggleSetting(FanCode)</onclick>
-						<selected>Skin.HasSetting(FanCode)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<enable>!IsEmpty(Skin.String(WeatherFanartDir))</enable>
-					</control>					
-					<control type="label" id="220">
-						<width>750</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>31108</label>
-						<textcolor>blue</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>
-					<control type="radiobutton" id="221">
-						<description>Hide Videos Button</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31111] - $LOCALIZE[3]</label>
-						<onclick>Skin.ToggleSetting(HomeMenuNoVideosButton)</onclick>
-						<selected>Skin.HasSetting(HomeMenuNoVideosButton)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="222">
-						<description>Hide Movies Button</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31111] - $LOCALIZE[20342] [COLOR=grey3] ($LOCALIZE[20314])[/COLOR]</label>
-						<onclick>Skin.ToggleSetting(HomeMenuNoMoviesButton)</onclick>
-						<selected>Skin.HasSetting(HomeMenuNoMoviesButton)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<enable>Library.HasContent(Movies)</enable>
-					</control>
-					<control type="radiobutton" id="229">
-						<description>Hide HD Movies Button</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31111] - $LOCALIZE[50025] [COLOR=grey3] ($LOCALIZE[20314])[/COLOR]</label>
-						<onclick>Skin.ToggleSetting(HomeMenuNoHDMoviesButton)</onclick>
-						<selected>Skin.HasSetting(HomeMenuNoHDMoviesButton)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<enable>Library.HasContent(Movies)</enable>
-					</control>
-					<control type="radiobutton" id="230">
-						<description>Hide Concerts Button</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31111] - $LOCALIZE[50026] [COLOR=grey3] ($LOCALIZE[20314])[/COLOR]</label>
-						<onclick>Skin.ToggleSetting(HomeMenuNoMusicVideosButton)</onclick>
-						<selected>Skin.HasSetting(HomeMenuNoMusicVideosButton)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="231">
-						<description>Hide Concerts Button</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31111] - $LOCALIZE[50042] [COLOR=grey3] ($LOCALIZE[20314])[/COLOR]</label>
-						<onclick>Skin.ToggleSetting(HomeMenuNoDocuButton)</onclick>
-						<selected>Skin.HasSetting(HomeMenuNoDocuButton)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>						
-					<control type="radiobutton" id="223">
-						<description>Hide TV Shows Button</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31111] - $LOCALIZE[20343] [COLOR=grey3] ($LOCALIZE[20314])[/COLOR]</label>
-						<onclick>Skin.ToggleSetting(HomeMenuNoTVShowsButton)</onclick>
-						<selected>Skin.HasSetting(HomeMenuNoTVShowsButton)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<enable>Library.HasContent(TVShows)</enable>
-					</control>
-					<control type="radiobutton" id="224">
-						<description>Hide Music Button</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31111] - $LOCALIZE[2]</label>
-						<onclick>Skin.ToggleSetting(HomeMenuNoMusicButton)</onclick>
-						<selected>Skin.HasSetting(HomeMenuNoMusicButton)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="225">
-						<description>Hide Pictures Button</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31111] - $LOCALIZE[1]</label>
-						<onclick>Skin.ToggleSetting(HomeMenuNoPicturesButton)</onclick>
-						<selected>Skin.HasSetting(HomeMenuNoPicturesButton)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="226">
-						<description>Hide Programs Button</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31111] - $LOCALIZE[0]</label>
-						<onclick>Skin.ToggleSetting(HomeMenuNoProgramsButton)</onclick>
-						<selected>Skin.HasSetting(HomeMenuNoProgramsButton)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="228">
-						<description>Hide Weather Button</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31111] - $LOCALIZE[8]</label>
-						<onclick>Skin.ToggleSetting(HomeMenuNoWeatherButton)</onclick>
-						<selected>Skin.HasSetting(HomeMenuNoWeatherButton)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
+				<control type="button" id="49">
+					<description>'1' button</description>
+					<posx>250</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>48</onleft>
+					<onright>50</onright>
+					<onup>32</onup>
+					<ondown>66</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
 				</control>
-				<control type="scrollbar" id="60">
-					<posx>1060</posx>
-					<posy>60</posy>
-					<width>25</width>
-					<height>530</height>
-					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-					<textureslidernib>ScrollBarNib.png</textureslidernib>
-					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
-					<onleft>9002</onleft>
-					<onright>9000</onright>
-					<showonepage>false</showonepage>
-					<orientation>vertical</orientation>
-					<visible>Container(9000).Hasfocus(2)</visible>
+				<control type="button" id="50">
+					<description>'2' button</description>
+					<posx>300</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>49</onleft>
+					<onright>51</onright>
+					<onup>32</onup>
+					<ondown>67</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
 				</control>
-				<control type="grouplist" id="9003">
-					<visible>Container(9000).Hasfocus(3)</visible>
-					<posx>290</posx>
-					<posy>60</posy>
-					<width>750</width>
-					<height>530</height>
-					<itemgap>-1</itemgap>
-					<pagecontrol>60</pagecontrol>
-					<onleft>9000</onleft>
-					<onright>60</onright>
-					<onup>9003</onup>
-					<ondown>9003</ondown>
-					<control type="label" id="310">
-						<width>750</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>31102</label>
-						<textcolor>blue</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>
-					<control type="radiobutton" id="313">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>50027</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(SeparateBackdrops)</onclick>
-						<selected>Skin.HasSetting(SeparateBackdrops)</selected>
-						<enable>!Skin.HasSetting(UseCustomBackground)</enable>
-					</control>					
-					<control type="radiobutton" id="311">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31109</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(UseCustomBackground)</onclick>
-						<selected>Skin.HasSetting(UseCustomBackground)</selected>
-						<enable>!Skin.HasSetting(SeparateBackdrops)</enable>
-					</control>
-					<control type="button" id="312">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>- $LOCALIZE[31110]</label>
-						<label2>[COLOR=selected]$INFO[Skin.String(CustomBackgroundPath)][/COLOR]</label2>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.SetImage(CustomBackgroundPath)</onclick>
-						<enable>Skin.HasSetting(UseCustomBackground)</enable>
-					</control>					
-					<control type="label" id="300">
-						<width>750</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>31106</label>
-						<textcolor>blue</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>
-					<control type="radiobutton" id="301">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31119</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(HideBackGroundFanart)</onclick>
-						<selected>Skin.HasSetting(HideBackGroundFanart)</selected>
-					</control>
-					<control type="radiobutton" id="302">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31129</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(HideVisualizationFanart)</onclick>
-						<selected>Skin.HasSetting(HideVisualizationFanart)</selected>
-					</control>
-					<control type="radiobutton" id="303">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31124</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(ShowBackgroundVideo)</onclick>
-						<selected>!Skin.HasSetting(ShowBackgroundVideo)</selected>
-					</control>
-					<control type="radiobutton" id="304">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31125</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(ShowBackgroundVis)</onclick>
-						<selected>!Skin.HasSetting(ShowBackgroundVis)</selected>
-					</control>
+				<control type="button" id="51">
+					<description>'3' button</description>
+					<posx>350</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>50</onleft>
+					<onright>52</onright>
+					<onup>32</onup>
+					<ondown>68</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
 				</control>
-				<control type="group">
-					<control type="grouplist" id="9004">
-						<visible>Container(9000).Hasfocus(4)</visible>
-						<posx>290</posx>
-						<posy>60</posy>
-						<width>750</width>
-						<height>530</height>
-						<itemgap>-1</itemgap>
-						<pagecontrol>61</pagecontrol>
-						<onleft>9000</onleft>
-						<onright>61</onright>
-						<onup>9004</onup>
-						<ondown>9004</ondown>
-						<control type="label" id="453">
-							<width>750</width>
-							<height>45</height>
-							<font>font13_title</font>
-							<label>31140</label>
-							<textcolor>blue</textcolor>
-							<shadowcolor>black</shadowcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-						</control>
-						<control type="button" id="455">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>$LOCALIZE[31132]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(LyricScript_Path))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
-						</control>
-						<control type="button" id="456">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>- $LOCALIZE[24020]</label>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<enable>!IsEmpty(Skin.String(LyricScript_Path))</enable>
-							<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
-						</control> 
-						<control type="label" id="457">
-							<width>750</width>
-							<height>45</height>
-							<font>font13_title</font>
-							<label>31141</label>
-							<textcolor>blue</textcolor>
-							<shadowcolor>black</shadowcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-						</control>
-						<control type="button" id="458">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>$LOCALIZE[31133]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(SubtitleScript_Path))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(SubtitleScript_Path,xbmc.python.subtitles)</onclick>
-						</control>
-						<control type="button" id="459">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>- $LOCALIZE[24020]</label>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<enable>!IsEmpty(Skin.String(SubtitleScript_Path))</enable>
-							<onclick>Addon.OpenSettings($INFO[Skin.String(SubtitleScript_Path)])</onclick>
-						</control> 
-
-						<control type="label" id="410">
-							<width>750</width>
-							<height>45</height>
-							<font>font13_title</font>
-							<label>Home Page Videos Submenu</label>
-							<textcolor>blue</textcolor>
-							<shadowcolor>black</shadowcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-						</control>
-						<control type="button" id="411">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]1[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton1))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomeVideosButton1,xbmc.addon.video,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="412">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]2[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton2))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomeVideosButton2,xbmc.addon.video,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="413">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]3[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton3))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomeVideosButton3,xbmc.addon.video,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="414">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]4[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton4))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomeVideosButton4,xbmc.addon.video,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="415">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]5[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton5))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomeVideosButton5,xbmc.addon.video,xbmc.addon.executable)</onclick>
-						</control>
-
-
-						<control type="label" id="440">
-							<width>750</width>
-							<height>45</height>
-							<font>font13_title</font>
-							<label>Home Programs Submenu</label>
-							<textcolor>blue</textcolor>
-							<shadowcolor>black</shadowcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-						</control>
-						<control type="button" id="441">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]1[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton1))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomeProgramButton1,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="442">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]2[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton2))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomeProgramButton2,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="443">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]3[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton3))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomeProgramButton3,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="444">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]4[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton4))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomeProgramButton4,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="445">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]5[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton5))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomeProgramButton5,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="446">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]6[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton6))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomeProgramButton6,xbmc.addon.executable)</onclick>
-						</control>
-
-
-						<control type="label" id="420">
-							<width>750</width>
-							<height>45</height>
-							<font>font13_title</font>
-							<label>Home Page Music Submenu</label>
-							<textcolor>blue</textcolor>
-							<shadowcolor>black</shadowcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-						</control>
-						<control type="button" id="421">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]1[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeMusicButton1))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomeMusicButton1,xbmc.addon.audio,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="422">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]2[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeMusicButton2))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomeMusicButton2,xbmc.addon.audio,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="423">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]3[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeMusicButton3))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomeMusicButton3,xbmc.addon.audio,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="424">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]4[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeMusicButton4))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomeMusicButton4,xbmc.addon.audio,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="425">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]5[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeMusicButton5))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomeMusicButton5,xbmc.addon.audio,xbmc.addon.executable)</onclick>
-						</control>
-
-						<control type="label" id="430">
-							<width>750</width>
-							<height>45</height>
-							<font>font13_title</font>
-							<label>Home Page Pictures Submenu</label>
-							<textcolor>blue</textcolor>
-							<shadowcolor>black</shadowcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-						</control>
-						<control type="button" id="431">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]1[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomePictureButton1))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomePictureButton1,xbmc.addon.image,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="432">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]2[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomePictureButton2))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomePictureButton2,xbmc.addon.image,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="433">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]3[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomePictureButton3))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomePictureButton3,xbmc.addon.image,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="434">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]4[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomePictureButton4))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomePictureButton4,xbmc.addon.image,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="button" id="435">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>Add-on [B]5[/B]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomePictureButton5))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(HomePictureButton5,xbmc.addon.image,xbmc.addon.executable)</onclick>
-						</control>
-						<control type="label" id="409">
-							<width>750</width>
-							<height>45</height>
-							<font>font13_title</font>
-							<label>Custom Playlists</label>
-							<textcolor>blue</textcolor>
-							<shadowcolor>black</shadowcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-						</control>	
-						<control type="radiobutton" id="555">
-							<description>custom home playlist</description>
-							<width>750</width>
-							<height>40</height>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<label>Custom Playlist 1</label>
-							<onfocus>Skin.SetString(MoviesCustom,1)</onfocus>
-							<onclick>Skin.ToggleSetting(Menu_Custom1)</onclick>
-							<selected>Skin.HasSetting(Menu_Custom1)</selected>
-							<enable>!Skin.HasSetting(Menu_Movies_Sub1)</enable>
-						</control>
-						<control type="button" id="8207">
-							<description>Menu Movies Sub Custom4 Label</description>
-							<label>50029</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(Menu_Custom1_Label)][/COLOR]</label2>
-							<width>750</width>
-							<height>40</height>
-							<font>font12</font>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetString(Menu_Custom1_Label)</onclick>
-							<visible>Skin.HasSetting(Menu_Custom1)</visible>
-						</control>
-						<control type="button" id="8208">
-							<description>Menu Movies Sub Custom4 Path</description>
-							<label>50030</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(Menu_Custom1_Path)][/COLOR]</label2>
-							<width>750</width>
-							<height>40</height>
-							<font>font12</font>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetFile(Menu_Custom1_Path,.xsp,special://videoplaylists)</onclick>
-							<visible>Skin.HasSetting(Menu_Custom1)</visible>
-						</control>					
-						<control type="radiobutton" id="556">
-							<description>custom home playlist</description>
-							<width>750</width>
-							<height>40</height>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<label>Custom Playlist 2</label>
-							<onfocus>Skin.SetString(MoviesCustom,2)</onfocus>
-							<onclick>Skin.ToggleSetting(Menu_Custom2)</onclick>
-							<selected>Skin.HasSetting(Menu_Custom2)</selected>
-							<enable>!Skin.HasSetting(Menu_Movies_Sub2)</enable>
-						</control>
-						<control type="button" id="8209">
-							<description>custom home playlist 2</description>
-							<label>50029</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(Menu_Custom2_Label)][/COLOR]</label2>
-							<width>750</width>
-							<height>40</height>
-							<font>font12</font>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetString(Menu_Custom2_Label)</onclick>
-							<visible>Skin.HasSetting(Menu_Custom2)</visible>
-						</control>
-						<control type="button" id="8210">
-							<description>Menu Movies Sub Custom4 Path</description>
-							<label>50030</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(Menu_Custom2_Path)][/COLOR]</label2>
-							<width>750</width>
-							<height>40</height>
-							<font>font12</font>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetFile(Menu_Custom2_Path,.xsp,special://videoplaylists)</onclick>
-							<visible>Skin.HasSetting(Menu_Custom2)</visible>
-						</control>
-						<control type="button" id="8266">
-							<description>Favourite 1</description>
-							<label>Custom Favourite 1</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(CustomFavourite1.Label)][/COLOR]</label2>
-							<width>750</width>
-							<height>40</height>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomFavourite1)</onclick>
-							<onclick>Skin.ToggleSetting(favourite1)</onclick>
-						</control>
-						<control type="button" id="8267">
-							<description>Favourite 2</description>
-							<label>Custom Favourite 2</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(CustomFavourite2.Label)][/COLOR]</label2>
-							<width>750</width>
-							<height>40</height>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomFavourite2)</onclick>
-							<onclick>Skin.ToggleSetting(favourite2)</onclick>
-						</control>	
-
-						<control type="label" id="4120">
-							<width>750</width>
-							<height>45</height>
-							<font>font13_title</font>
-							<label>Custom SumMenu Items (HD-Movies)</label>
-							<textcolor>blue</textcolor>
-							<shadowcolor>black</shadowcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-						</control>
-						<control type="radiobutton" id="559">
-							<description>custom home playlist</description>
-							<width>750</width>
-							<height>40</height>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<label>Custom Playlist 1</label>
-							<onfocus>Skin.SetString(HDMoviesCustom,2)</onfocus>
-							<onclick>Skin.ToggleSetting(HDMenu_Custom2)</onclick>
-							<selected>Skin.HasSetting(HDMenu_Custom2)</selected>
-							<enable>!Skin.HasSetting(HDMenu_Movies_Sub2)</enable>
-						</control>
-						<control type="button" id="8211">
-							<description>custom home playlist 2</description>
-							<label>50029</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(HDMenu_Custom2_Label)][/COLOR]</label2>
-							<width>750</width>
-							<height>40</height>
-							<font>font12</font>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetString(HDMenu_Custom2_Label)</onclick>
-							<visible>Skin.HasSetting(HDMenu_Custom2)</visible>
-						</control>
-						<control type="button" id="8212">
-							<description>Menu Movies Sub Custom4 Path</description>
-							<label>50030</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(HDMenu_Custom2_Path)][/COLOR]</label2>
-							<width>750</width>
-							<height>40</height>
-							<font>font12</font>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetFile(HDMenu_Custom2_Path,.xsp,special://videoplaylists)</onclick>
-							<visible>Skin.HasSetting(HDMenu_Custom2)</visible>
-						</control>
-						<control type="radiobutton" id="560">
-							<description>custom home playlist</description>
-							<width>750</width>
-							<height>40</height>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<label>Custom Playlist 2</label>
-							<onfocus>Skin.SetString(HDMoviesCustom,3)</onfocus>
-							<onclick>Skin.ToggleSetting(HDMenu_Custom3)</onclick>
-							<selected>Skin.HasSetting(HDMenu_Custom3)</selected>
-							<enable>!Skin.HasSetting(HDMenu_Movies_Sub3)</enable>
-						</control>
-						<control type="button" id="8213">
-							<description>custom home playlist 2</description>
-							<label>50029</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(HDMenu_Custom3_Label)][/COLOR]</label2>
-							<width>750</width>
-							<height>40</height>
-							<font>font12</font>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetString(HDMenu_Custom3_Label)</onclick>
-							<visible>Skin.HasSetting(HDMenu_Custom3)</visible>
-						</control>
-						<control type="button" id="8214">
-							<description>Menu Movies Sub Custom4 Path</description>
-							<label>50030</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(HDMenu_Custom3_Path)][/COLOR]</label2>
-							<width>750</width>
-							<height>40</height>
-							<font>font12</font>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetFile(HDMenu_Custom3_Path,.xsp,special://videoplaylists)</onclick>
-							<visible>Skin.HasSetting(HDMenu_Custom3)</visible>
-						</control>	
-						<control type="radiobutton" id="561">
-							<description>custom home playlist</description>
-							<width>750</width>
-							<height>40</height>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<label>Custom Playlist 3</label>
-							<onfocus>Skin.SetString(HDMoviesCustom,4)</onfocus>
-							<onclick>Skin.ToggleSetting(HDMenu_Custom4)</onclick>
-							<selected>Skin.HasSetting(HDMenu_Custom4)</selected>
-							<enable>!Skin.HasSetting(HDMenu_Movies_Sub4)</enable>
-						</control>
-						<control type="button" id="8215">
-							<description>custom home playlist 2</description>
-							<label>50029</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(HDMenu_Custom4_Label)][/COLOR]</label2>
-							<width>750</width>
-							<height>40</height>
-							<font>font12</font>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetString(HDMenu_Custom4_Label)</onclick>
-							<visible>Skin.HasSetting(HDMenu_Custom4)</visible>
-						</control>
-						<control type="button" id="8216">
-							<description>Menu Movies Sub Custom4 Path</description>
-							<label>50030</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(HDMenu_Custom4_Path)][/COLOR]</label2>
-							<width>750</width>
-							<height>40</height>
-							<font>font12</font>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetFile(HDMenu_Custom4_Path,.xsp,special://videoplaylists)</onclick>
-							<visible>Skin.HasSetting(HDMenu_Custom4)</visible>
-						</control>
-						<control type="label" id="4122">
-							<width>750</width>
-							<height>45</height>
-							<font>font13_title</font>
-							<label>Custom Last.FM Items (Music)</label>
-							<textcolor>blue</textcolor>
-							<shadowcolor>black</shadowcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-						</control>
-						<control type="radiobutton" id="566">
-							<description>custom lastfm</description>
-							<width>750</width>
-							<height>40</height>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<label>Enable Last.FM</label>
-							<onclick>Skin.ToggleSetting(lastfm)</onclick>
-							<selected>Skin.HasSetting(lastfm)</selected>
-						</control>						
-						<control type="radiobutton" id="565">
-							<description>custom lastfm globaltag</description>
-							<width>750</width>
-							<height>40</height>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<label>Last.FM Radio</label>
-							<onfocus>Skin.SetString(lastfmtag,4)</onfocus>
-							<onclick>Skin.ToggleSetting(lastfmtag)</onclick>
-							<selected>Skin.HasSetting(lastfmtag)</selected>
-						</control>
-						<control type="button" id="8225">
-							<description>custom home playlist 2</description>
-							<label>Globaltag</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(lastfmtag_Label)][/COLOR]</label2>
-							<width>750</width>
-							<height>40</height>
-							<font>font12</font>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetString(lastfmtag_Label)</onclick>
-							<visible>Skin.HasSetting(lastfmtag)</visible>
-						</control>						
-					</control>
+				<control type="button" id="52">
+					<description>'4' button</description>
+					<posx>400</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>51</onleft>
+					<onright>53</onright>
+					<onup>32</onup>
+					<ondown>69</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
 				</control>
-				<control type="scrollbar" id="61">
-					<posx>1060</posx>
-					<posy>60</posy>
-					<width>25</width>
-					<height>530</height>
-					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-					<textureslidernib>ScrollBarNib.png</textureslidernib>
-					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
-					<onleft>9004</onleft>
-					<onright>9000</onright>
-					<showonepage>false</showonepage>
-					<orientation>vertical</orientation>
-					<visible>Container(9000).Hasfocus(4)</visible>
+				<control type="button" id="53">
+					<description>'5' button</description>
+					<posx>450</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>52</onleft>
+					<onright>54</onright>
+					<onup>32</onup>
+					<ondown>70</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
 				</control>
-				<control type="group">
-					<posx>290</posx>
-					<posy>60</posy>
-					<visible>Container(9000).Hasfocus(5)</visible>
-					<control type="label">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>680</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>31109</label>
-						<textcolor>blue</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>
-					<control type="button" id="9004">
-						<description>Menu Item Next Button</description>
-						<posx>670</posx>
-						<posy>53</posy>
-						<width>33</width>
-						<height>22</height>
-						<label>-</label>
-						<font>-</font>
-						<texturenofocus>scroll-down-2.png</texturenofocus>
-						<texturefocus>scroll-down-focus-2.png</texturefocus>
-						<onclick>Control.Move(9005,1)</onclick>
-						<onleft>9000</onleft>
-						<onright>9055</onright>
-						<onup>300</onup>
-						<ondown>300</ondown>
-					</control>
-					<control type="button" id="9055">
-						<description>Menu Item Prev Button</description>
-						<posx>703</posx>
-						<posy>53</posy>
-						<width>33</width>
-						<height>22</height>
-						<label>-</label>
-						<font>-</font>
-						<texturenofocus>scroll-up-2.png</texturenofocus>
-						<texturefocus>scroll-up-focus-2.png</texturefocus>
-						<onclick>Control.Move(9005,-1)</onclick>
-						<onleft>9004</onleft>
-						<onright>9000</onright>
-						<onup>300</onup>
-						<ondown>300</ondown>
-					</control>
-					<control type="list" id="9005">
-						<hitrect x="0" y="0" w="0" h="0" />
-						<posx>0</posx>
-						<posy>45</posy>
-						<width>750</width>
-						<height>40</height>
-						<onleft>9000</onleft>
-						<onright>300</onright>
-						<onup>9005</onup>
-						<ondown>9005</ondown>
-						<pagecontrol>-</pagecontrol>
-						<scrolltime>0</scrolltime>
-						<itemlayout height="1" width="750">
-						</itemlayout>
-						<focusedlayout height="40" width="750">
-							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>750</width>
-								<height>40</height>
-								<texture>MenuItemNF.png</texture>
-								<visible>![Control.HasFocus(304) | Control.HasFocus(305)]</visible>
-							</control>
-							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>750</width>
-								<height>40</height>
-								<texture>MenuItemFO.png</texture>
-								<visible>[Control.HasFocus(304) | Control.HasFocus(305)]</visible>
-							</control>
-							<control type="label">
-								<posx>10</posx>
-								<posy>0</posy>
-								<width>600</width>
-								<height>40</height>
-								<font>font13</font>
-								<textcolor>grey2</textcolor>
-								<align>left</align>
-								<aligny>center</aligny>
-								<label>$LOCALIZE[31110]</label>
-								<visible>![Control.HasFocus(304) | Control.HasFocus(305)]</visible>
-							</control>
-							<control type="label">
-								<posx>10</posx>
-								<posy>0</posy>
-								<width>600</width>
-								<height>40</height>
-								<font>font13</font>
-								<textcolor>white</textcolor>
-								<align>left</align>
-								<aligny>center</aligny>
-								<label>$LOCALIZE[31110]</label>
-								<visible>[Control.HasFocus(304) | Control.HasFocus(305)]</visible>
-							</control>
-							<control type="label">
-								<posx>650</posx>
-								<posy>0</posy>
-								<width>640</width>
-								<height>40</height>
-								<font>font13</font>
-								<textcolor>grey2</textcolor>
-								<align>right</align>
-								<aligny>center</aligny>
-								<label>$INFO[ListItem.Label]</label>
-								<visible>![Control.HasFocus(304) | Control.HasFocus(305)]</visible>
-							</control>
-							<control type="label">
-								<posx>650</posx>
-								<posy>0</posy>
-								<width>640</width>
-								<height>40</height>
-								<font>font13</font>
-								<textcolor>white</textcolor>
-								<align>right</align>
-								<aligny>center</aligny>
-								<label>$INFO[ListItem.Label]</label>
-								<visible>[Control.HasFocus(304) | Control.HasFocus(305)]</visible>
-							</control>
-						</focusedlayout>
-						<content>
-							<item id="1">
-								<label>3</label>
-								<label2>Home_Custom_Back_Video_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/videos.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_Video_Folder)]</thumb>
-							</item>
-							<item id="10">
-								<label>20342</label>
-								<label2>Home_Custom_Back_Movies_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/videos.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_Movies_Folder)]</thumb>
-								<visible>!Skin.HasSetting(HomeMenuNoMoviesButton) + Library.HasContent(Movies)</visible>
-							</item>
-							<item id="11">
-								<label>20343</label>
-								<label2>Home_Custom_Back_TVShow_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/videos.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_TVShow_Folder)]</thumb>
-								<visible>!Skin.HasSetting(HomeMenuNoTVShowsButton) + Library.HasContent(TVShows)</visible>
-							</item>
-							<item id="12">
-								<label>31502</label>
-								<label2>Home_Custom_Back_TV_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/tv.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_TV_Folder)]</thumb>
-								<visible>System.GetBool(pvrmanager.enabled)</visible>
-							</item>
-							<item id="35">
-								<label>HD-Filme</label>
-								<label2>Home_Custom_Back_HD_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/hdmovies.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_HD_Folder)]</thumb>
-							</item>
-							<item id="57">
-								<label>Dokus</label>
-								<label2>Home_Custom_Back_Docu_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/documentary.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_Docu_Folder)]</thumb>
-							</item>
-							<item id="2">
-								<label>2</label>
-								<label2>Home_Custom_Back_Music_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/music.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_Music_Folder)]</thumb>
-							</item>
-							<item id="9">
-								<label>50026</label>
-								<label2>Home_Custom_Back_MusicVideos_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/musicvideos.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_MusicVideos_Folder)]</thumb>
-							</item>
-							<item id="101">
-								<label>$INFO[Skin.String(CustomFavourite1.Label)]</label>
-								<label2>Home_Custom_Back_Favourite1_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/SKINDEFAULT.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_Favourite1_Folder)]</thumb>
-								<visible>Skin.HasSetting(favourite1)</visible>
-							</item>
-							<item id="102">
-								<label>$INFO[Skin.String(CustomFavourite2.Label)]</label>
-								<label2>Home_Custom_Back_Favourite2_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/SKINDEFAULT.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_Favourite2_Folder)]</thumb>
-								<visible>Skin.HasSetting(favourite2)</visible>
-							</item>							
-							<item id="99">
-								<label>$INFO[Skin.String(Menu_Custom1_Label)]</label>
-								<label2>Menu_Custom1_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/videos.jpg</icon>
-								<thumb>$INFO[Skin.String(Menu_Custom1_Folder)]</thumb>
-								<visible>Skin.HasSetting(Menu_Custom1)</visible>
-							</item>
-							<item id="199">
-								<label>$INFO[Skin.String(Menu_Custom2_Label)]</label>
-								<label2>Menu_Custom2_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/videos.jpg</icon>
-								<thumb>$INFO[Skin.String(Menu_Custom2_Folder)]</thumb>
-								<visible>Skin.HasSetting(Menu_Custom2)</visible>
-							</item>
-							<item id="3">
-								<label>1</label>
-								<label2>Home_Custom_Back_Pictures_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/pictures.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_Pictures_Folder)]</thumb>
-							</item>
-							<item id="4">
-								<label>0</label>
-								<label2>Home_Custom_Back_Programs_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/programs.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_Programs_Folder)]</thumb>
-							</item>
-							<item id="5">
-								<label>8</label>
-								<label2>Home_Custom_Back_Weather_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/weather.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_Weather_Folder)]</thumb>
-							</item>
-							<item id="7">
-								<label>13000</label>
-								<label2>Home_Custom_Back_Settings_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/settings.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_Settings_Folder)]</thumb>
-							</item>
-							<item id="8">
-								<label>24001</label>
-								<label2>Home_Custom_Back_Addons_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/Addons.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_Addons_Folder)]</thumb>
-							</item>
-							<item id="23">
-								<label>$INFO[Skin.String(Menu_Custom8_Label)]</label>
-								<label2>Home_Custom_Back_Fav_Folder</label2>
-								<onclick>-</onclick>
-								<icon>s$INFO[Skin.String(Menu_Custom8_Folder)]</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_Fav_Folder)]</thumb>
-								<visible>Skin.HasSetting(Menu_Custom8)</visible>
-							</item>
-							<item id="24">
-								<label>$INFO[Skin.String(Menu_Custom9_Label)]</label>
-								<label2>Home_Custom_Back_Fav2_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/videos.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_Fav2_Folder)]</thumb>
-								<visible>Skin.HasSetting(Menu_Custom9)</visible>
-							</item>							
-							<item id="9">
-								<label>341</label>
-								<label2>Home_Custom_Back_PlayDisc_Folder</label2>
-								<onclick>-</onclick>
-								<icon>special://skin/backgrounds/playdisc.jpg</icon>
-								<thumb>$INFO[Skin.String(Home_Custom_Back_PlayDisc_Folder)]</thumb>
-							</item>							
-						</content>
-					</control>
-					<control type="image">
-						<posx>85</posx>
-						<posy>100</posy>
-						<width>580</width>
-						<height>435</height>
-						<texture>black-back.png</texture>
-					</control>
-					<control type="group">
-						<posx>95</posx>
-						<posy>110</posy>
-						<control type="button" id="300">
-							<description>Single Image button</description>
-							<posx>5</posx>
-							<posy>0</posy>
-							<width>180</width>
-							<height>40</height>
-							<label>Single</label>
-							<font>font12_title</font>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<align>center</align>
-							<texturenofocus border="5">button-nofocus.png</texturenofocus>
-							<texturefocus border="5">button-focus.png</texturefocus>
-							<onclick>Skin.SetImage($INFO[Container(9005).ListItem.Label2])</onclick>
-							<onleft>302</onleft>
-							<onright>301</onright>
-							<onup>9004</onup>
-							<ondown>9004</ondown>
-						</control>
-						<control type="button" id="301">
-							<description>Multi Image button</description>
-							<posx>190</posx>
-							<posy>0</posy>
-							<width>180</width>
-							<height>40</height>
-							<label>Multi</label>
-							<font>font12_title</font>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<align>center</align>
-							<texturenofocus border="5">button-nofocus.png</texturenofocus>
-							<texturefocus border="5">button-focus.png</texturefocus>
-							<onclick>Skin.SetPath($INFO[Container(9005).ListItem.Label2])</onclick>
-							<onleft>300</onleft>
-							<onright>302</onright>
-							<onup>9004</onup>
-							<ondown>9004</ondown>
-						</control>
-						<control type="button" id="302">
-							<description>Default Image button</description>
-							<posx>375</posx>
-							<posy>0</posy>
-							<width>180</width>
-							<height>40</height>
-							<label>571</label>
-							<font>font12_title</font>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<align>center</align>
-							<texturenofocus border="5">button-nofocus.png</texturenofocus>
-							<texturefocus border="5">button-focus.png</texturefocus>
-							<onclick>Skin.Reset($INFO[Container(9005).ListItem.Label2])</onclick>
-							<onleft>301</onleft>
-							<onright>300</onright>
-							<onup>9004</onup>
-							<ondown>9004</ondown>
-						</control>
-						<control type="multiimage">
-							<posx>0</posx>
-							<posy>50</posy>
-							<width>560</width>
-							<height>335</height>
-							<imagepath background="true">$INFO[Container(9005).ListItem.Icon]</imagepath>
-							<timeperimage>6000</timeperimage>
-							<randomize>true</randomize>
-							<fadetime>500</fadetime>
-						</control>
-					</control>
-				</control>	
+				<control type="button" id="54">
+					<description>'6' button</description>
+					<posx>500</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>53</onleft>
+					<onright>55</onright>
+					<onup>305</onup>
+					<ondown>71</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="55">
+					<description>'7' button</description>
+					<posx>550</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>54</onleft>
+					<onright>56</onright>
+					<onup>305</onup>
+					<ondown>72</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="56">
+					<description>'8' button</description>
+					<posx>600</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>55</onleft>
+					<onright>57</onright>
+					<onup>306</onup>
+					<ondown>73</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="57">
+					<description>'9' button</description>
+					<posx>650</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>56</onleft>
+					<onright>300</onright>
+					<onup>306</onup>
+					<ondown>74</ondown>
+					<texturenofocus flipx="true" border="5,25,25,5">KeyboardCornerTopNF.png</texturenofocus>
+					<texturefocus flipx="true" border="5,25,25,5">KeyboardCornerTop.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="radiobutton" id="302">
+					<description>SHIFT button</description>
+					<posx>0</posx>
+					<posy>50</posy>
+					<width>200</width>
+					<height>50</height>
+					<label>20178</label>
+					<onleft>74</onleft>
+					<onright>65</onright>
+					<onup>300</onup>
+					<ondown>303</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<radioposy>5</radioposy>
+					<radiowidth>20</radiowidth>
+					<radioheight>20</radioheight>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="65">
+					<description>'A' button</description>
+					<posx>200</posx>
+					<posy>50</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>302</onleft>
+					<onright>66</onright>
+					<onup>48</onup>
+					<ondown>75</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="66">
+					<description>'B' button</description>
+					<posx>250</posx>
+					<posy>50</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>65</onleft>
+					<onright>67</onright>
+					<onup>49</onup>
+					<ondown>76</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="67">
+					<description>'C' button</description>
+					<posx>300</posx>
+					<posy>50</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>66</onleft>
+					<onright>68</onright>
+					<onup>50</onup>
+					<ondown>77</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="68">
+					<description>'D' button</description>
+					<posx>350</posx>
+					<posy>50</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>67</onleft>
+					<onright>69</onright>
+					<onup>51</onup>
+					<ondown>78</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="69">
+					<description>'E' button</description>
+					<posx>400</posx>
+					<posy>50</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>68</onleft>
+					<onright>70</onright>
+					<onup>52</onup>
+					<ondown>79</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="70">
+					<description>'F' button</description>
+					<posx>450</posx>
+					<posy>50</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>69</onleft>
+					<onright>71</onright>
+					<onup>53</onup>
+					<ondown>80</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="71">
+					<description>'G' button</description>
+					<posx>500</posx>
+					<posy>50</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>70</onleft>
+					<onright>72</onright>
+					<onup>54</onup>
+					<ondown>81</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="72">
+					<description>'H' button</description>
+					<posx>550</posx>
+					<posy>50</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>71</onleft>
+					<onright>73</onright>
+					<onup>55</onup>
+					<ondown>82</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="73">
+					<description>'I' button</description>
+					<posx>600</posx>
+					<posy>50</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>72</onleft>
+					<onright>74</onright>
+					<onup>56</onup>
+					<ondown>83</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="74">
+					<description>'J' button</description>
+					<posx>650</posx>
+					<posy>50</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>73</onleft>
+					<onright>302</onright>
+					<onup>57</onup>
+					<ondown>84</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="radiobutton" id="303">
+					<description>CAPS LOCK button</description>
+					<posx>0</posx>
+					<posy>100</posy>
+					<width>200</width>
+					<height>50</height>
+					<label>20179</label>
+					<onleft>84</onleft>
+					<onright>75</onright>
+					<onup>302</onup>
+					<ondown>304</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<radioposy>5</radioposy>
+					<radiowidth>20</radiowidth>
+					<radioheight>20</radioheight>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="75">
+					<description>'K' button</description>
+					<posx>200</posx>
+					<posy>100</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>303</onleft>
+					<onright>76</onright>
+					<onup>65</onup>
+					<ondown>85</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="76">
+					<description>'L' button</description>
+					<posx>250</posx>
+					<posy>100</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>75</onleft>
+					<onright>77</onright>
+					<onup>66</onup>
+					<ondown>86</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="77">
+					<description>'M' button</description>
+					<posx>300</posx>
+					<posy>100</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>76</onleft>
+					<onright>78</onright>
+					<onup>67</onup>
+					<ondown>87</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="78">
+					<description>'N' button</description>
+					<posx>350</posx>
+					<posy>100</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>77</onleft>
+					<onright>79</onright>
+					<onup>68</onup>
+					<ondown>88</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="79">
+					<description>'O' button</description>
+					<posx>400</posx>
+					<posy>100</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>78</onleft>
+					<onright>80</onright>
+					<onup>69</onup>
+					<ondown>89</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="80">
+					<description>'P' button</description>
+					<posx>450</posx>
+					<posy>100</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>79</onleft>
+					<onright>81</onright>
+					<onup>70</onup>
+					<ondown>90</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="81">
+					<description>'Q' button</description>
+					<posx>500</posx>
+					<posy>100</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>80</onleft>
+					<onright>82</onright>
+					<onup>71</onup>
+					<ondown>8</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="82">
+					<description>'R' button</description>
+					<posx>550</posx>
+					<posy>100</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>81</onleft>
+					<onright>83</onright>
+					<onup>72</onup>
+					<ondown>8</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="83">
+					<description>'S' button</description>
+					<posx>600</posx>
+					<posy>100</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>82</onleft>
+					<onright>84</onright>
+					<onup>73</onup>
+					<ondown>8</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="84">
+					<description>'T' button</description>
+					<posx>650</posx>
+					<posy>100</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>83</onleft>
+					<onright>303</onright>
+					<onup>74</onup>
+					<ondown>8</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="radiobutton" id="304">
+					<description>Symbols button</description>
+					<posx>0</posx>
+					<posy>150</posy>
+					<width>200</width>
+					<height>50</height>
+					<label>20180</label>
+					<onleft>8</onleft>
+					<onright>85</onright>
+					<onup>303</onup>
+					<ondown>307</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<radioposy>5</radioposy>
+					<radiowidth>20</radiowidth>
+					<radioheight>20</radioheight>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="85">
+					<description>'U' button</description>
+					<posx>200</posx>
+					<posy>150</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>304</onleft>
+					<onright>86</onright>
+					<onup>75</onup>
+					<ondown>32</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="86">
+					<description>'V' button</description>
+					<posx>250</posx>
+					<posy>150</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>85</onleft>
+					<onright>87</onright>
+					<onup>76</onup>
+					<ondown>32</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="87">
+					<description>'W' button</description>
+					<posx>300</posx>
+					<posy>150</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>86</onleft>
+					<onright>88</onright>
+					<onup>77</onup>
+					<ondown>32</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="88">
+					<description>'X' button</description>
+					<posx>350</posx>
+					<posy>150</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>87</onleft>
+					<onright>89</onright>
+					<onup>78</onup>
+					<ondown>32</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="89">
+					<description>'Y' button</description>
+					<posx>400</posx>
+					<posy>150</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>88</onleft>
+					<onright>90</onright>
+					<onup>79</onup>
+					<ondown>32</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="90">
+					<description>'Z' button</description>
+					<posx>450</posx>
+					<posy>150</posy>
+					<width>50</width>
+					<height>50</height>
+					<onleft>89</onleft>
+					<onright>8</onright>
+					<onup>80</onup>
+					<ondown>32</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="8">
+					<description>BACKSPACE button</description>
+					<posx>500</posx>
+					<posy>150</posy>
+					<width>200</width>
+					<height>50</height>
+					<label>20181</label>
+					<onleft>90</onleft>
+					<onright>304</onright>
+					<onup>81</onup>
+					<ondown>305</ondown>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="307">
+					<description>IP Input button</description>
+					<posx>0</posx>
+					<posy>200</posy>
+					<width>200</width>
+					<height>50</height>
+					<texturenofocus border="25,5,25,5">KeyboardCornerBottomNF.png</texturenofocus>
+					<texturefocus border="25,5,25,5">KeyboardCornerBottom.png</texturefocus>
+					<label>1006</label>
+					<font>font13</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<onleft>306</onleft>
+					<onright>32</onright>
+					<onup>304</onup>
+					<ondown>300</ondown>
+					<focusedcolor>black</focusedcolor>
+				</control>
+				<control type="button" id="32">
+					<description>SPACE button</description>
+					<posx>200</posx>
+					<posy>200</posy>
+					<width>300</width>
+					<height>50</height>
+					<label>20182</label>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<focusedcolor>black</focusedcolor>
+					<onleft>307</onleft>
+					<onright>305</onright>
+					<onup>85</onup>
+					<ondown>48</ondown>
+				</control>
+				<control type="button" id="305">
+					<description>previous button</description>
+					<posx>500</posx>
+					<posy>200</posy>
+					<width>100</width>
+					<height>50</height>
+					<label>&lt;</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+					<texturefocus border="5">KeyboardKey.png</texturefocus>
+					<font>font30</font>
+					<focusedcolor>black</focusedcolor>
+					<onleft>32</onleft>
+					<onright>306</onright>
+					<onup>8</onup>
+					<ondown>54</ondown>
+				</control>
+				<control type="button" id="306">
+					<description>next button</description>
+					<posx>600</posx>
+					<posy>200</posy>
+					<width>100</width>
+					<height>50</height>
+					<label>&gt;</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturenofocus flipx="true" border="5,5,25,25">KeyboardCornerBottomNF.png</texturenofocus>
+					<texturefocus flipx="true" border="5,5,25,25">KeyboardCornerBottom.png</texturefocus>
+					<font>font30</font>
+					<focusedcolor>black</focusedcolor>
+					<onleft>305</onleft>
+					<onright>307</onright>
+					<onup>8</onup>
+					<ondown>56</ondown>
+				</control>
 			</control>
 		</control>
-		<include>CommonNowPlaying</include>
-		<include>MainWindowMouseButtons</include>
-		<include>BehindDialogFadeOut</include>
-		<include>Clock</include>
 	</controls>
 </window>
