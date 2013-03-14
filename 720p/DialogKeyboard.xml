@@ -120,7 +120,7 @@
 					<onleft>300</onleft>
 					<onright>49</onright>
 					<onup>32</onup>
-					<ondown>65</ondown>
+					<ondown>81</ondown>
 					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
 					<texturefocus border="5">KeyboardKey.png</texturefocus>
 					<align>center</align>
@@ -137,7 +137,7 @@
 					<onleft>48</onleft>
 					<onright>50</onright>
 					<onup>32</onup>
-					<ondown>66</ondown>
+					<ondown>87</ondown>
 					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
 					<texturefocus border="5">KeyboardKey.png</texturefocus>
 					<align>center</align>
@@ -154,7 +154,7 @@
 					<onleft>49</onleft>
 					<onright>51</onright>
 					<onup>32</onup>
-					<ondown>67</ondown>
+					<ondown>69</ondown>
 					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
 					<texturefocus border="5">KeyboardKey.png</texturefocus>
 					<align>center</align>
@@ -171,7 +171,7 @@
 					<onleft>50</onleft>
 					<onright>52</onright>
 					<onup>32</onup>
-					<ondown>68</ondown>
+					<ondown>82</ondown>
 					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
 					<texturefocus border="5">KeyboardKey.png</texturefocus>
 					<align>center</align>
@@ -188,7 +188,7 @@
 					<onleft>51</onleft>
 					<onright>53</onright>
 					<onup>32</onup>
-					<ondown>69</ondown>
+					<ondown>84</ondown>
 					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
 					<texturefocus border="5">KeyboardKey.png</texturefocus>
 					<align>center</align>
@@ -205,7 +205,7 @@
 					<onleft>52</onleft>
 					<onright>54</onright>
 					<onup>32</onup>
-					<ondown>70</ondown>
+					<ondown>89</ondown>
 					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
 					<texturefocus border="5">KeyboardKey.png</texturefocus>
 					<align>center</align>
@@ -222,7 +222,7 @@
 					<onleft>53</onleft>
 					<onright>55</onright>
 					<onup>305</onup>
-					<ondown>71</ondown>
+					<ondown>85</ondown>
 					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
 					<texturefocus border="5">KeyboardKey.png</texturefocus>
 					<align>center</align>
@@ -239,7 +239,7 @@
 					<onleft>54</onleft>
 					<onright>56</onright>
 					<onup>305</onup>
-					<ondown>72</ondown>
+					<ondown>73</ondown>
 					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
 					<texturefocus border="5">KeyboardKey.png</texturefocus>
 					<align>center</align>
@@ -256,7 +256,7 @@
 					<onleft>55</onleft>
 					<onright>57</onright>
 					<onup>306</onup>
-					<ondown>73</ondown>
+					<ondown>79</ondown>
 					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
 					<texturefocus border="5">KeyboardKey.png</texturefocus>
 					<align>center</align>
@@ -273,7 +273,7 @@
 					<onleft>56</onleft>
 					<onright>300</onright>
 					<onup>306</onup>
-					<ondown>74</ondown>
+					<ondown>80</ondown>
 					<texturenofocus flipx="true" border="5,25,25,5">KeyboardCornerTopNF.png</texturenofocus>
 					<texturefocus flipx="true" border="5,25,25,5">KeyboardCornerTop.png</texturefocus>
 					<align>center</align>
@@ -620,7 +620,7 @@
 					<height>50</height>
 					<onleft>75</onleft>
 					<onright>303</onright>
-					<onup>79</onup>
+					<onup>73</onup>
 					<ondown>306</ondown>
 					<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
 					<texturefocus border="5">KeyboardKey.png</texturefocus>
